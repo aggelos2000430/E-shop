@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #f2f2f2;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+nav li {
+  margin-right: 10px;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #666;
+  color: white;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+nav button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+form input[type="submit"] {
+  display: block;
+  width: 100px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.accordion2:hover {
+  background-color: #444;
+}
+
+.menu-container {
+  position: relative;
+}
+
+#menu-btn {
+  display: block;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 10%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.6s;
+}
+
+#menu-btn.active + #menu-content {
+  display: block;
+}
+
+#menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -60px;
+  background-color: #444;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 12px;
+  min-width: 120px;
+}
+
+.menu-bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #fff;
+  transition: all 0.6s ease;
+}
+
+#menu-content a {
+  display: block;
+  padding: 8px 0;
+  color: white;
+}
+
+.question {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.question a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.question a:hover {
+  color: #45a049;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .menu-container {
+    margin-top: 10px;
+  }
+
+  #menu-btn {
+    width: auto;
+  }
+
+  #menu-content {
+    left: 0;
+    top: 60px;
+    min-width: 100%;
+  }
+}
