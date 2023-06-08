@@ -1,11 +1,11 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #333;
+  background-color: #555;
   color: #f2f2f2;
 }
 
 header {
-  background-color: #222;
+  background-color: #444;
   color: white;
   padding: 20px;
   display: flex;
@@ -88,8 +88,8 @@ nav button[type="submit"]:hover {
 form input[type="submit"] {
   display: block;
   width: 100px;
-  background-color: #4CAF50;
-  color: #fff;
+  background-color: darkgray;
+  color: darkgrey;
   border: none;
   padding: 10px 15px;
   font-size: 14px;
@@ -99,7 +99,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #bdbdbd;
 }
 
 main {

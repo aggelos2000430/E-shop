@@ -25,6 +25,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+    // Check if username already exists
+    $stmt = $mysqli->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $response['message'] = 'Username already taken';
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
+    }
+    $stmt->close();
+
+    // Check if email already exists
+    $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $response['message'] = 'Email already in use';
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
+    }
+    $stmt->close();
+
+    // If username and email are unique, register user
     $stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
     if ($stmt === false) {
         $response['message'] = 'Prepare statement failed: ' . $mysqli->error;
